@@ -9,7 +9,6 @@ model = joblib.load(filename)
 # model = joblib.load('filename.pkl')
 @app.route('/')
 def index():
-    
     return render_template('index.html')
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -45,7 +44,7 @@ def predict():
     v28 = request.form['v28']
       
     pred = model.predict(np.array([[scaled_amount, scaled_time, v1, v28]]))
-print(pred)
+    print(pred)
     return render_template('index.html', predict=str(pred))
 if __name__ == '__main__':
     app.run(debug=True)

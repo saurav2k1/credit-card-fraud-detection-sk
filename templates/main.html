@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CreditCard-Fraud-Detection</title>
+</head>
+<body>
+    <form action="{{ url_for('predict')}}" method="POST">
+        scaled_amount:  <input type="number" name="scaled_amount">
+        scaled_time:  <input type="number" name="scaled_time">
+        v1:  <input type="number" name="v1">
+        v2:  <input type="number" name="v2"><br>
+        v3:  <input type="number" name="v3">
+        v4:  <input type="number" name="v4">
+        v5:  <input type="number" name="v5">
+        v6:  <input type="number" name="v6"><br>
+        v7:  <input type="number" name="v7">
+        v8:  <input type="number" name="v8">
+        v9:  <input type="number" name="v9">
+        v10:  <input type="number" name="v10"><br>
+        v11:  <input type="number" name="v11">
+        v12:  <input type="number" name="v12">
+        v13:  <input type="number" name="v13">
+        v14:  <input type="number" name="v14"><br>
+        v15:  <input type="number" name="v15">
+        v16:  <input type="number" name="v16">
+        v17:  <input type="number" name="v17">
+        v18:  <input type="number" name="v18"><br>
+        v19:  <input type="number" name="v19">
+        v20:  <input type="number" name="v20">
+        v21:  <input type="number" name="v21">
+        v22:  <input type="number" name="v22"><br>
+        v23:  <input type="number" name="v23">
+        v24:  <input type="number" name="v24">
+        v25:  <input type="number" name="v25">
+        v26:  <input type="number" name="v26"><br>
+        v27:  <input type="number" name="v27">
+        v28:  <input type="number" name="v28">
+        <input type=submit value=Submit>
+   </form>
+    My prediction: {{ predict }}
+</body>
+</html>

@@ -44,7 +44,8 @@ def predict():
     v27 = request.form['v27']
     v28 = request.form['v28']
       
-    pred = model.predict(np.array([[scaled_amount, scaled_time, v1,------, v28]]))
+    pred = model.predict(np.array([[scaled_amount, scaled_time, v1,
+                                                    ------, v28]]))
 print(pred)
     return render_template('index.html', predict=str(pred))
 if __name__ == '__main__':

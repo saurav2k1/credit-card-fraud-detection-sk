@@ -60,9 +60,12 @@ def predict():
     Transaction_Amount_bucket_low = request.form['Transaction_Amount_bucket_low']
     Transaction_Amount_bucket_medium = request.form['Transaction_Amount_bucket_medium']
 
-      
-#    pred = model.predict(np.array([[V308,   V57,    C11,    V114,   V283,   V312,   V70,    V319,   V19,    V28,    V292,   V28_1,  V82,    V311,   V86,    V26,    V300,   C9, V301,   V88,    V284,   V301_1, V121,   V56,    D15,    V106,   V107,   addr2,  card5,  addr1,  ProductCD_H,    ProductCD_R,    ProductCD_S,    ProductCD_W,    card4_discover, card4_mastercard,   card4_visa, card6_credit,   card6_debit,    card6_debit_or_credit,  P_emaildomain_summary_anonymous_com,    P_emaildomain_summary_aol_com,  P_emaildomain_summary_gmail_com,    P_emaildomain_summary_hotmail_com,  P_emaildomain_summary_yahoo_com,    Transaction_Amount_bucket_low,  Transaction_Amount_bucket_medium]]))
-    pred = model.predict(np.array([[1,0,0,0,0,1,0,0,2,0,2,0,2,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,1]]))
+
+    pred=model.predict(np.array([[V308,V57,C11,V114,V283,V312,V70,V319,V19,V28,V292,V28_1,V82,V311,V86,V26,V300,C9,V301,V88,V284,V301_1,V121,V56,D15,V106,V107,addr2,card5,addr1,ProductCD_H,ProductCD_R,ProductCD_S,ProductCD_W,card4_discover,card4_mastercard,card4_visa,card6_credit,card6_debit,card6_debit_or_credit,P_emaildomain_summary_anonymous_com,P_emaildomain_summary_aol_com,P_emaildomain_summary_gmail_com,P_emaildomain_summary_hotmail_com,P_emaildomain_summary_yahoo_com,Transaction_Amount_bucket_low,Transaction_Amount_bucket_medium]]))      
+#    pred = model.predict(np.array([[V308,V57,C11,V114,V283,V312,V70,V319,V19,V28,V292,V28_1,  V82,    V311,   V86,    V26,    V300,   C9, V301,   V88,    V284,   V301_1, V121,   V56,    D15,    V106,   V107,   addr2,  card5,  addr1,  ProductCD_H,    ProductCD_R,    ProductCD_S,    ProductCD_W,    card4_discover, card4_mastercard,   card4_visa, card6_credit,   card6_debit,    card6_debit_or_credit,  P_emaildomain_summary_anonymous_com,    P_emaildomain_summary_aol_com,  P_emaildomain_summary_gmail_com,    P_emaildomain_summary_hotmail_com,  P_emaildomain_summary_yahoo_com,    Transaction_Amount_bucket_low,  Transaction_Amount_bucket_medium]]))
+#    pred = model.predict(np.array([[1,0,0,0,0,1,0,0,2,0,2,0,2,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,1]]))
+
+
     print(pred)
     return render_template('index.html', predict=str(pred))
 if __name__ == '__main__':

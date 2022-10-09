@@ -23,7 +23,7 @@ def predict():
     V19 = request.form['V19']
     V28 = request.form['V28']
     V292 = request.form['V292']
-    V28.1 = request.form['V28.1']
+    V28_1 = request.form['V28_1']
     V82 = request.form['V82']
     V311 = request.form['V311']
     V86 = request.form['V86']
@@ -33,7 +33,7 @@ def predict():
     V301 = request.form['V301']
     V88 = request.form['V88']
     V284 = request.form['V284']
-    V301.1 = request.form['V301.1']
+    V301_1 = request.form['V301_1']
     V121 = request.form['V121']
     V56 = request.form['V56']
     D15 = request.form['D15']
@@ -51,17 +51,17 @@ def predict():
     card4_visa = request.form['card4_visa']
     card6_credit = request.form['card6_credit']
     card6_debit = request.form['card6_debit']
-    card6_debit or credit = request.form['card6_debit or credit']
-    P_emaildomain_summary_anonymous.com = request.form['P_emaildomain_summary_anonymous.com']
-    P_emaildomain_summary_aol.com = request.form['P_emaildomain_summary_aol.com']
-    P_emaildomain_summary_gmail.com = request.form['P_emaildomain_summary_gmail.com']
-    P_emaildomain_summary_hotmail.com = request.form['P_emaildomain_summary_hotmail.com']
-    P_emaildomain_summary_yahoo.com = request.form['P_emaildomain_summary_yahoo.com']
+    card6_debit_or_credit = request.form['card6_debit_or_credit']
+    P_emaildomain_summary_anonymous_com = request.form['P_emaildomain_summary_anonymous_com']
+    P_emaildomain_summary_aol_com = request.form['P_emaildomain_summary_aol_com']
+    P_emaildomain_summary_gmail_com = request.form['P_emaildomain_summary_gmail_com']
+    P_emaildomain_summary_hotmail_com = request.form['P_emaildomain_summary_hotmail_com']
+    P_emaildomain_summary_yahoo_com = request.form['P_emaildomain_summary_yahoo_com']
     Transaction_Amount_bucket_low = request.form['Transaction_Amount_bucket_low']
     Transaction_Amount_bucket_medium = request.form['Transaction_Amount_bucket_medium']
 
       
-    pred = model.predict(np.array([[V308,   V57,    C11,    V114,   V283,   V312,   V70,    V319,   V19,    V28,    V292,   V28.1,  V82,    V311,   V86,    V26,    V300,   C9, V301,   V88,    V284,   V301.1, V121,   V56,    D15,    V106,   V107,   addr2,  card5,  addr1,  ProductCD_H,    ProductCD_R,    ProductCD_S,    ProductCD_W,    card4_discover, card4_mastercard,   card4_visa, card6_credit,   card6_debit,    card6_debit or credit,  P_emaildomain_summary_anonymous.com,    P_emaildomain_summary_aol.com,  P_emaildomain_summary_gmail.com,    P_emaildomain_summary_hotmail.com,  P_emaildomain_summary_yahoo.com,    Transaction_Amount_bucket_low,  Transaction_Amount_bucket_medium]]))
+    pred = model.predict(np.array([[V308,   V57,    C11,    V114,   V283,   V312,   V70,    V319,   V19,    V28,    V292,   V28_1,  V82,    V311,   V86,    V26,    V300,   C9, V301,   V88,    V284,   V301_1, V121,   V56,    D15,    V106,   V107,   addr2,  card5,  addr1,  ProductCD_H,    ProductCD_R,    ProductCD_S,    ProductCD_W,    card4_discover, card4_mastercard,   card4_visa, card6_credit,   card6_debit,    card6_debit_or_credit,  P_emaildomain_summary_anonymous_com,    P_emaildomain_summary_aol_com,  P_emaildomain_summary_gmail_com,    P_emaildomain_summary_hotmail_com,  P_emaildomain_summary_yahoo_com,    Transaction_Amount_bucket_low,  Transaction_Amount_bucket_medium]]))
     print(pred)
     return render_template('index.html', predict=str(pred))
 if __name__ == '__main__':

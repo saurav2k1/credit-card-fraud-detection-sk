@@ -54,9 +54,9 @@ def predict():
     print(f"P_emaildomain_summary_aol_com --> {P_emaildomain_summary_aol_com}")
 
     # Here I am going to transform input from user for TransactionAmount field into bucketed numeric value expected in model after onehot encoding.
-    if TransactionAmount < 10.0:
+    if float(TransactionAmount) < 10.0:
         Transaction_Amount_bucket ='low'
-    elif TransactionAmount >= 10.0 and TransactionAmount <= 100.0:
+    elif float(TransactionAmount) >= 10.0 and float(TransactionAmount) <= 100.0:
         Transaction_Amount_bucket ='medium'
     else:
         Transaction_Amount_bucket ='high'

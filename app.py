@@ -39,7 +39,7 @@ def predict():
     V307 = request.form['V307']
     V309 = request.form['V309']
     V316 = request.form['V316']
-    addr1 = request.form['addr2']
+    addr2 = request.form['addr2']
 
     print(f"V86 --> {V86}")
     print(f"P_emaildomain_summary_aol_com --> {P_emaildomain_summary_aol_com}")

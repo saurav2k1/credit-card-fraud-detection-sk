@@ -29,7 +29,7 @@ def predict():
     card5 = request.form['card5']
     D1 = request.form['D1']
     D10 = request.form['D10']
-    P_emaildomain_summary_aol_com = request.form['P_emaildomain_summary_aol_com']
+    P_emaildomain = request.form['P_emaildomain']
     Transaction_Amount_bucket_low = request.form['Transaction_Amount_bucket_low']
     V85 = request.form['V85']
     V86 = request.form['V86']
@@ -42,9 +42,17 @@ def predict():
     addr2 = request.form['addr2']
 
     print(f"V86 --> {V86}")
+    print(f"P_emaildomain --> {P_emaildomain}")
+
+    # Here I am going to transform input from user for P_emaildomain field into numeric value expected in model.
+    if P_emaildomain =='aol.com':
+        P_emaildomain_summary_aol_com=1.0
+    else:
+        P_emaildomain_summary_aol_com=0.0
+
     print(f"P_emaildomain_summary_aol_com --> {P_emaildomain_summary_aol_com}")
 
-
+    
     input_variables = pd.DataFrame([[TransactionDT,card5,card1,addr2,C12,C13,C1,C10,C3,card3,D10,C7,V86,V85,C14,C9,C5,C11,V306,D1,C6,P_emaildomain_summary_aol_com,V309,V307,Transaction_Amount_bucket_low,V126,V282,V316,C8,card2]],
                                    columns=['TransactionDT', 'card5', 'card1', 'addr2', 'C12', 'C13', 'C1', 'C10', 'C3', 'card3', 'D10', 'C7', 'V86', 'V85', 'C14', 'C9', 'C5', 'C11', 'V306', 'D1', 'C6', 'P_emaildomain_summary_aol_com', 'V309', 'V307','Transaction_Amount_bucket_low', 'V126', 'V282', 'V316', 'C8', 'card2'],
                                    dtype=float)

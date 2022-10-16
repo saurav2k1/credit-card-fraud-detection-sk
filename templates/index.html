@@ -7,35 +7,35 @@
 <body>
     <form action="{{ url_for('predict')}}" method="POST">
         TransactionDT:  <input type="number" name="TransactionDT"><br>
-        C1:  <input type="number" name="C1"><br>
-        C3:  <input type="number" name="C3"><br>
-        C5:  <input type="number" name="C5"><br>
-        C6:  <input type="number" name="C6"><br>
-        C7:  <input type="number" name="C7"><br>
-        C8:  <input type="number" name="C8"><br>
-        C9:  <input type="number" name="C9"><br>
-        C10:  <input type="number" name="C10"><br>
-        C11:  <input type="number" name="C11"><br>
-        C12:  <input type="number" name="C12"><br>  
-        C13:  <input type="number" name="C13"><br>
-        C14:  <input type="number" name="C14"><br>   
-        card1:  <input type="number" name="card1"><br>   
-        card2:  <input type="number" name="card2"><br>                                                         
-        card3:  <input type="number" name="card3"><br>
-        card5:  <input type="number" name="card5"><br>                                                         
-        D1:  <input type="number" name="D1"><br>
-        D10:  <input type="number" name="D10"><br>
-        P_emaildomain_summary_aol_com:  <input type="number" name="P_emaildomain_summary_aol_com"><br>    
-        Transaction_Amount_bucket_low:  <input type="number" name="Transaction_Amount_bucket_low"><br>              
-        V85:  <input type="number" name="V85"><br>
-        V86:  <input type="number" name="V86"><br>
-        V126:  <input type="number" name="V126"><br>
-        V282:  <input type="number" name="V282"><br>
-        V306:  <input type="number" name="V306"><br>
-        V307:  <input type="number" name="V307"><br>
-        V309:  <input type="number" name="V309"><br>
-        V316:  <input type="number" name="V316"><br>        
-        addr2:  <input type="number" name="addr2"><br>                        
+        C1:  <input type="number" step="any" name="C1"><br>
+        C3:  <input type="number" step="any" name="C3"><br>
+        C5:  <input type="number" step="any" name="C5"><br>
+        C6:  <input type="number" step="any" name="C6"><br>
+        C7:  <input type="number" step="any" name="C7"><br>
+        C8:  <input type="number" step="any" name="C8"><br>
+        C9:  <input type="number" step="any" name="C9"><br>
+        C10:  <input type="number" step="any" name="C10"><br>
+        C11:  <input type="number" step="any" name="C11"><br>
+        C12:  <input type="number" step="any" name="C12"><br>  
+        C13:  <input type="number" step="any" name="C13"><br>
+        C14:  <input type="number" step="any" name="C14"><br>   
+        card1:  <input type="number" step="any" name="card1"><br>   
+        card2:  <input type="number" step="any" name="card2"><br>                                                         
+        card3:  <input type="number" step="any" name="card3"><br>
+        card5:  <input type="number" step="any" name="card5"><br>                                                         
+        D1:  <input type="number" step="any" name="D1"><br>
+        D10:  <input type="number" step="any" name="D10"><br>
+        P_emaildomain:  <input type="number" step="any" name="P_emaildomain_summary_aol_com"><br>    
+        Transaction_Amount_bucket_low:  <input type="number" step="any" name="Transaction_Amount_bucket_low"><br>              
+        V85:  <input type="number" step="any" name="V85"><br>
+        V86:  <input type="number" step="any" name="V86"><br>
+        V126:  <input type="number" step="any" name="V126"><br>
+        V282:  <input type="number" step="any" name="V282"><br>
+        V306:  <input type="number" step="any" name="V306"><br>
+        V307:  <input type="number" step="any" name="V307"><br>
+        V309:  <input type="number" step="any" name="V309"><br>
+        V316:  <input type="number" step="any" name="V316"><br>        
+        addr2:  <input type="number" step="any" name="addr2"><br>                        
         <input type=submit value=Submit>
    </form>
     My prediction: {{ predict }}

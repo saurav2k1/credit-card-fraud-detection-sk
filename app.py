@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import joblib
 app = Flask(__name__)
-filename = 'credit_card_fraud_detection_model_rf.sav'
+filename = 'credit_card_fraud_detection_model_rf_compressed.sav'
 model = joblib.load(filename)
 @app.route('/')
 def index():

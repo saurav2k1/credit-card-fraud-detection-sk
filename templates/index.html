@@ -5,6 +5,13 @@
     <title>CreditCard-Fraud-Detection</title>
 </head>
 <body>
+    <p>
+        Welcome to Credit Card Fraud Detection application. Please provide input here and click Submit to see the predicted outcome. Here 1.0 in output represents the transaction may be potentially fraudulent and 0.0 in output represents transaction as non fraudlent.<br>
+        <br>Please follow below instuctions before providing inputs to below fields: 
+        <br>TransactionDT: Please provide date in YYYYMMDD format for example if transaction occured anytime on 16-Oct-2022 then input will be 20221016
+        <br>P_emaildomain: Please provide email domain for example gmail.com, aol.com etc.
+        <br>All other fields only accept decimal numeric value.
+    </p>
     <form action="{{ url_for('predict')}}" method="POST">
         TransactionDT:  <input type="number" name="TransactionDT"><br>
         TransactionAmount:  <input type="number" step="any" name="TransactionAmount"><br>          

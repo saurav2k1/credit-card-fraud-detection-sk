@@ -11,6 +11,7 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     TransactionDT = request.form['TransactionDT']
+    TransactionAmount = request.form['TransactionAmount']    
     C1 = request.form['C1']
     C3 = request.form['C3']
     C5 = request.form['C5']
@@ -30,7 +31,6 @@ def predict():
     D1 = request.form['D1']
     D10 = request.form['D10']
     P_emaildomain = request.form['P_emaildomain']
-    Transaction_Amount_bucket_low = request.form['Transaction_Amount_bucket_low']
     V85 = request.form['V85']
     V86 = request.form['V86']
     V126 = request.form['V126']
@@ -43,14 +43,31 @@ def predict():
 
     print(f"V86 --> {V86}")
     print(f"P_emaildomain --> {P_emaildomain}")
+    print(f"TransactionAmount --> {TransactionAmount}")    
 
-    # Here I am going to transform input from user for P_emaildomain field into numeric value expected in model.
+    # Here I am going to transform input from user for P_emaildomain field into numeric value expected in model after onehot encoding.
     if P_emaildomain =='aol.com':
         P_emaildomain_summary_aol_com=1.0
     else:
         P_emaildomain_summary_aol_com=0.0
 
     print(f"P_emaildomain_summary_aol_com --> {P_emaildomain_summary_aol_com}")
+
+    # Here I am going to transform input from user for TransactionAmount field into bucketed numeric value expected in model after onehot encoding.
+    if TransactionAmount < 10.0:
+        Transaction_Amount_bucket ='low'
+    elif TransactionAmount >= 10.0 and TransactionAmount <= 100.0:
+        Transaction_Amount_bucket ='medium'
+    else:
+        Transaction_Amount_bucket ='high'
+
+    if Transaction_Amount_bucket =='low':
+        Transaction_Amount_bucket_low =1.0
+    else:
+        Transaction_Amount_bucket_low =0.0
+
+
+    print(f"Transaction_Amount_bucket_low --> {Transaction_Amount_bucket_low}")    
 
     
     input_variables = pd.DataFrame([[TransactionDT,card5,card1,addr2,C12,C13,C1,C10,C3,card3,D10,C7,V86,V85,C14,C9,C5,C11,V306,D1,C6,P_emaildomain_summary_aol_com,V309,V307,Transaction_Amount_bucket_low,V126,V282,V316,C8,card2]],

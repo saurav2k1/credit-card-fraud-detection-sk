@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from datetime import datetime
 import numpy as np
 import pandas as pd
 import joblib
@@ -68,6 +69,21 @@ def predict():
 
 
     print(f"Transaction_Amount_bucket_low --> {Transaction_Amount_bucket_low}")    
+
+    # Transaction date here is the actual date of transaction captured from user however model expects the delta which is number of seconds 
+    # between input date and 20171201 (This is start date as per input dataset documentation)
+
+    input_transaction_date=TransactionDT
+    start_date='20171201'
+
+    # convert string to date object
+    d1 = datetime.strptime(input_transaction_date, "%Y%m%d")
+    d2 = datetime.strptime(start_date, "%Y%m%d")
+
+    # difference between dates in timedelta in seconds
+    delta = d1 - d2
+    TransactionDT=delta.days*86400
+    print(f'Difference is {TransactionDT} seconds')    
 
     
     input_variables = pd.DataFrame([[TransactionDT,card5,card1,addr2,C12,C13,C1,C10,C3,card3,D10,C7,V86,V85,C14,C9,C5,C11,V306,D1,C6,P_emaildomain_summary_aol_com,V309,V307,Transaction_Amount_bucket_low,V126,V282,V316,C8,card2]],
